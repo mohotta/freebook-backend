@@ -9,7 +9,6 @@ import java.util.UUID;
 @Repository
 public interface UserRepository extends MongoRepository<User, UUID> {
 
-    // user must be given for sure because auth process make sure of that
-    User findByEmail(String email);
+    Optional<User> findByEmail(String email);
 
 }

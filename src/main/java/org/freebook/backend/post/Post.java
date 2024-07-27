@@ -6,10 +6,11 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.freebook.backend.user.User;
+import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.mapping.DocumentReference;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
@@ -27,9 +28,9 @@ public class Post {
     private String imgUrl;
     private String imgId;
     private String location;
-    @DocumentReference
-    private User creator;
-    @DocumentReference
-    private List<User> likedList;
+    @CreatedDate
+    private LocalDateTime createdAt;
+    private UUID creatorId;
+    private List<UUID> likedList;
 
 }

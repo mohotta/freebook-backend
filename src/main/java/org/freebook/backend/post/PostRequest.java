@@ -19,6 +19,5 @@ public class PostRequest {
     private String imgUrl;
     private String imgId;
     private String location;
-    private UUID creatorId;
 
 }
